@@ -1,0 +1,1 @@
+IDL file must contain an interface, not a dictionary

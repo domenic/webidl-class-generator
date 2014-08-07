@@ -14,7 +14,7 @@ describe("Checking inputs against outputs", () => {
         var idlContents = fs.readFileSync(idlFilePath, { encoding: "utf-8" });
         var jsContents = fs.readFileSync(jsFilePath, { encoding: "utf-8" });
 
-        specify(idlFilePath, () => {
+        specify(idlFileName, () => {
             assert.strictEqual(generate(idlContents), jsContents);
         });
     });
