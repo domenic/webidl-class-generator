@@ -1,0 +1,3 @@
+interface ReflectReadonly {
+  [Reflect] readonly attribute unsigned long reflectMe;
+};
