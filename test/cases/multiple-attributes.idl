@@ -1,0 +1,5 @@
+interface MultipleAttributes {
+    attribute unsigned long attribute1;
+    readonly attribute DOMString attribute2;
+    attribute short attribute3;
+};
