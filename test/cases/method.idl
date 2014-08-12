@@ -1,0 +1,3 @@
+interface Method {
+   boolean theMethod(DOMString arg1, unsigned long arg2);
+};
