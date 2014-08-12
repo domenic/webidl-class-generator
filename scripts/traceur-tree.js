@@ -1,4 +1,4 @@
-// Usage: `node scripts/traceur-tree test/cases/bare-interface.js` will output the Traceur tree for the given ES6
+// Usage: `node scripts/traceur-tree test/cases/empty-interface.js` will output the Traceur tree for the given ES6
 // file. You can then use this to guide your tree-generation logic.
 
 "use strict";
