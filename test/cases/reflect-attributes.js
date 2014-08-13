@@ -1,4 +1,4 @@
-import reflector from "webidl-reflector";
+import reflector from "webidl-html-reflector";
 export default class ReflectAttributes {
   get attribute1() {
     return reflector["unsigned long"].get(this, "attribute1");
