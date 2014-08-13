@@ -1,0 +1,5 @@
+interface ReflectAttributes {
+  [Reflect] readonly attribute unsigned long attribute1;
+  [Reflect] attribute DOMString attribute2;
+  [Reflect] readonly attribute boolean attribute3;
+};
