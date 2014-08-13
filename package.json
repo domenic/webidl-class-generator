@@ -31,7 +31,7 @@
     "mocha-traceur": "git://github.com/domenic/mocha-traceur#patch-1"
   },
   "dependencies": {
-    "traceur": "git://github.com/google/traceur-compiler",
+    "traceur": "^0.0.58",
     "webidl2": "^2.0.6"
   }
 }
