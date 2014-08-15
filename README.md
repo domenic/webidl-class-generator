@@ -1,4 +1,4 @@
-# WebIDL Class Generator
+# Generate JavaScript Classes from WebIDL Interfaces
 
 The goal of this project is to take as input
 
@@ -54,3 +54,13 @@ export default class Foo extends Bar {
 ```
 
 (Although since `[Reflect]` is not part of standard WebIDL, ideally that would be done in a second pass, perhaps by a "plugin.")
+
+## API
+
+This package's main module's default export is a function that takes as input a WebIDL string, and returns a string of JavaScript. It will parse the WebIDL, making sure that it contains a single (non-partial) interface, and then build up the resulting JavaScript. Any unsupported WebIDL features—which is most of them, right now—will generally be ignored.
+
+## Status
+
+We don't support too many features right now. Check [the issues](https://github.com/domenic/webidl-class-generator/issues) for upcoming ones that need work. In particular, the strategy of delegating to an implementation class is not yet in place.
+
+Nevertheless, we've got enough for `HTMLHRElement`: [this IDL file](https://github.com/domenic/webidl-class-generator/blob/master/test/cases/html-hr-element.idl) becomes [this JavaScript file](https://github.com/domenic/webidl-class-generator/blob/master/test/cases/html-hr-element.js).
