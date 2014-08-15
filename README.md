@@ -25,17 +25,18 @@ and produce something like
 
 ```js
 // foo.js
-import reflector from "webidl-reflection";
+import reflector from "webidl-html-reflector";
 import conversions from "webidl-conversions";
-
-class FooImpl {
-    get y() { return Math.random() * 1000; }
-    method(arg) { return arg.toLowerCase(); }
-}
+import FooImpl from "./foo-impl";
 
 export default class Foo extends Bar {
-    get x() { return reflector["unsigned long"].get(this, "x"); }
-    set x(v) { reflector["unsigned long"].set(this, "x", v); }
+    get x() {
+        return reflector["unsigned long"].get(this, "x");
+    }
+    set x(v) {
+        v = conversions["unsigned long"](v);
+        reflector["unsigned long"].set(this, "x", v);
+    }
 
     get y() {
         var implGetter = Object.getOwnPropertyDescriptor(FooImpl.prototype, "y").get;
