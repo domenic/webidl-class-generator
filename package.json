@@ -1,6 +1,6 @@
 {
   "name": "webidl-class-generator",
-  "version": "1.0.0-pre",
+  "version": "1.0.0",
   "description": "Generates classes from WebIDL plus implementation code",
   "main": "lib/index.js",
   "scripts": {
