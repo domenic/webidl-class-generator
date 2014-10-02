@@ -6,10 +6,7 @@
   "scripts": {
     "test": "mocha --compilers js:mocha-traceur test/*.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/domenic/webidl-class-generator.git"
-  },
+  "repository": "domenic/webidl-class-generator",
   "keywords": [
     "webidl",
     "es6",
@@ -24,14 +21,13 @@
   ],
   "author": "Domenic Denicola <domenic@domenicdenicola.com> (http://domenic.me/)",
   "license": "BSD-2-Clause",
-  "bugs": "https://github.com/domenic/webidl-class-generator/issues",
   "devDependencies": {
-    "glob": "^4.0.5",
+    "glob": "^4.0.6",
     "mocha": "^1.21.4",
-    "mocha-traceur": "git://github.com/domenic/mocha-traceur#patch-1"
+    "mocha-traceur": "^2.0.0"
   },
   "dependencies": {
-    "traceur": "^0.0.58",
+    "traceur": "^0.0.66",
     "webidl2": "^2.0.6"
   }
 }
