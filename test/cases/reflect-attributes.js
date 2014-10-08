@@ -15,3 +15,4 @@ export default class ReflectAttributes {
     return reflector["boolean"].get(this, "attribute3");
   }
 }
+window.ReflectAttributes = ReflectAttributes;

@@ -58,6 +58,8 @@ export default class Foo extends Bar {
 
 defineProperty(Foo, "A_CONSTANT", { value: 42, enumerable: true });
 defineProperty(Foo.prototype, "A_CONSTANT", { value: 42, enumerable: true });
+
+window.Foo = Foo;
 ```
 
 (Although since `[Reflect]` is not part of standard WebIDL, ideally that would be done in a second pass, perhaps by a "plugin.")

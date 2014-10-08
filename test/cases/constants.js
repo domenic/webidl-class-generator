@@ -16,3 +16,4 @@ defineProperty(Constants.prototype, "ONE", {
   value: 1,
   enumerable: true
 });
+window.Constants = Constants;

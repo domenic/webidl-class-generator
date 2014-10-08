@@ -1,4 +1,4 @@
-interface Method {
+interface Methods {
    boolean theMethod(DOMString arg1, unsigned long arg2);
 
    void otherMethod(double otherMethodArg);

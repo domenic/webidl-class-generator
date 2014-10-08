@@ -4,3 +4,4 @@ export default class ReflectReadonlyAttribute {
     return reflector["unsigned long"].get(this, "reflectme");
   }
 }
+window.ReflectReadonlyAttribute = ReflectReadonlyAttribute;

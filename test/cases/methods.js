@@ -1,5 +1,5 @@
 import conversions from "webidl-conversions";
-export default class Method {
+export default class Methods {
   theMethod(arg1, arg2) {
     arg1 = conversions["DOMString"](arg1);
     arg2 = conversions["unsigned long"](arg2);
@@ -8,3 +8,4 @@ export default class Method {
     otherMethodArg = conversions["double"](otherMethodArg);
   }
 }
+window.Methods = Methods;

@@ -37,3 +37,4 @@ export default class HTMLHRElement extends HTMLElement {
     reflector["DOMString"].set(this, "width", v);
   }
 }
+window.HTMLHRElement = HTMLHRElement;

@@ -10,3 +10,4 @@ export default class MultipleAttributes {
     v = conversions["short"](v);
   }
 }
+window.MultipleAttributes = MultipleAttributes;
