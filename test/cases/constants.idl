@@ -1,0 +1,4 @@
+interface Constants {
+   const unsigned short ZERO = 0;
+   const unsigned long ONE = 0x1;
+};
