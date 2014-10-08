@@ -8,6 +8,8 @@ interface Foo : Bar {
     [Reflect] attribute unsigned long x;
     readonly attribute long y;
     boolean method(DOMString arg);
+
+    constant unsigned short A_CONSTANT = 42;
 }
 ```
 
@@ -19,6 +21,7 @@ export default class FooImpl {
     get y() { return Math.random() * 1000; }
     method(arg) { return arg.toLowerCase(); }
 }
+
 ```
 
 and produce something like
@@ -28,6 +31,7 @@ and produce something like
 import reflector from "webidl-html-reflector";
 import conversions from "webidl-conversions";
 import FooImpl from "./foo-impl";
+var defineProperty = Object.defineProperty;
 
 export default class Foo extends Bar {
     get x() {
@@ -51,6 +55,9 @@ export default class Foo extends Bar {
         return conversions["boolean"](implResult);
     }
 }
+
+defineProperty(Foo, "A_CONSTANT", { value: 42, enumerable: true });
+defineProperty(Foo.prototype, "A_CONSTANT", { value: 42, enumerable: true });
 ```
 
 (Although since `[Reflect]` is not part of standard WebIDL, ideally that would be done in a second pass, perhaps by a "plugin.")
