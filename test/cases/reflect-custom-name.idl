@@ -1,0 +1,4 @@
+interface ReflectCustomName {
+  [Reflect=foo] attribute DOMString defaultFoo;
+  [Reflect=with_underscores_as_dashes] readonly attribute unsigned long anotherAttribute;
+};
