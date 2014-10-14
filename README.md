@@ -80,7 +80,17 @@ window.Foo = Foo;
 
 ## API
 
-This package's main module's default export is a function that takes as input a WebIDL string, and returns a string of JavaScript. It will parse the WebIDL, making sure that it contains a single (non-partial) interface, and then build up the resulting JavaScript. Any unsupported WebIDL features—which is most of them, right now—will generally be ignored.
+This package's main module's default export is a function that takes as input a WebIDL string and the implementation module name, and returns a string of JavaScript. It will parse the WebIDL, making sure that it contains a single (non-partial) interface, and then build up the resulting JavaScript. Any unsupported WebIDL features—which is most of them, right now—will generally be ignored. An example:
+
+```js
+var fs = require("fs");
+import generate from "webidl-class-generator";
+
+var idl = fs.readFileSync("html-hr-element.idl", { encoding: "utf-8" });
+var js = generate(idl, "./html-hr-element-impl.js");
+
+fs.writeFileSync("html-hr-element.js", js);
+```
 
 ## Status
 
