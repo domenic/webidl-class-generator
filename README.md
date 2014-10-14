@@ -7,6 +7,7 @@ The goal of this project is to take as input
 interface Foo : Bar {
     [Reflect] attribute unsigned long x;
     readonly attribute long y;
+    attribute DOMString z;
     boolean method(DOMString arg);
 
     constant unsigned short A_CONSTANT = 42;
@@ -30,7 +31,7 @@ and produce something like
 // foo.js
 import reflector from "webidl-html-reflector";
 import conversions from "webidl-conversions";
-import FooImpl from "./foo-impl";
+import Impl from "./foo-impl";
 var defineProperty = Object.defineProperty;
 
 export default class Foo extends Bar {
@@ -43,15 +44,26 @@ export default class Foo extends Bar {
     }
 
     get y() {
-        var implGetter = Object.getOwnPropertyDescriptor(FooImpl.prototype, "y").get;
-        var implResult = implGetter.call(this);
+        const implGetter = Object.getOwnPropertyDescriptor(Impl.prototype, "y").get;
+        const implResult = implGetter.call(this);
         return conversions["long"](implResult);
+    }
+
+    get z() {
+        const implGetter = Object.getOwnPropertyDescriptor(Impl.prototype, "z").get;
+        const implResult = implGetter.call(this);
+        return conversions["DOMString"](implResult);
+    }
+    set z(v) {
+        v = conversions["DOMString"](v);
+        const implSetter = Object.getOwnPropertyDescriptor(Impl.prototype, "z").set;
+        implSetter.call(this, v);
     }
 
     method(arg) {
         arg = conversions["DOMString"](arg);
-        var implMethod = FooImpl.prototype.method;
-        var implResult = implMethod.call(this, arg);
+        const implMethod = Impl.prototype.method;
+        const implResult = implMethod.call(this, arg);
         return conversions["boolean"](implResult);
     }
 }
