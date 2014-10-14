@@ -20,6 +20,8 @@ plus
 // foo-impl.js
 export default class FooImpl {
     get y() { return Math.random() * 1000; }
+    get z() { return this._z; }
+    set z(v) { this._z = v; }
     method(arg) { return arg.toLowerCase(); }
 }
 
