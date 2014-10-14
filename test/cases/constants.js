@@ -1,18 +1,17 @@
-var defineProperty = Object.defineProperty;
 export default class Constants {}
-defineProperty(Constants, "ZERO", {
+Object.defineProperty(Constants, "ZERO", {
   value: 0,
   enumerable: true
 });
-defineProperty(Constants.prototype, "ZERO", {
+Object.defineProperty(Constants.prototype, "ZERO", {
   value: 0,
   enumerable: true
 });
-defineProperty(Constants, "ONE", {
+Object.defineProperty(Constants, "ONE", {
   value: 1,
   enumerable: true
 });
-defineProperty(Constants.prototype, "ONE", {
+Object.defineProperty(Constants.prototype, "ONE", {
   value: 1,
   enumerable: true
 });
