@@ -1,0 +1,5 @@
+// Comment above
+interface Comments {
+    /* before */ readonly attribute DOMString bar;
+};
+// Comment after
