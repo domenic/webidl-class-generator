@@ -1,1 +1,1 @@
-IDL file must contain only a single interface
+IDL file must contain only a single interface, potentially with implements statements

@@ -1,0 +1,5 @@
+interface Implements {
+  readonly attribute DOMString foo;
+};
+
+Implements implements Mixin;
