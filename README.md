@@ -94,6 +94,4 @@ fs.writeFileSync("html-hr-element.js", js);
 
 ## Status
 
-We don't support too many features right now. Check [the issues](https://github.com/domenic/webidl-class-generator/issues) for upcoming ones that need work. In particular, the strategy of delegating to an implementation class is not yet in place.
-
-Nevertheless, we've got enough for `HTMLHRElement`: [this IDL file](https://github.com/domenic/webidl-class-generator/blob/master/test/cases/html-hr-element.idl) becomes [this JavaScript file](https://github.com/domenic/webidl-class-generator/blob/master/test/cases/html-hr-element.js).
+We only support a subset of WebIDL features; they are being added on an as-needed basis for [HTML as Custom Elements](https://github.com/dglazkov/html-as-custom-elements). Check out [the test cases](https://github.com/domenic/webidl-class-generator/tree/master/test/cases) for a sampling of what's supported, and [the issues](https://github.com/domenic/webidl-class-generator/labels/idl%20feature) for upcoming ones that need work.
