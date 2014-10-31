@@ -1,0 +1,5 @@
+interface NoConversion {
+  [NoConversion] readonly attribute USVString origin;
+  [NoConversion] attribute USVString protocol;
+  [NoConversion, Reflect] attribute boolean foo;
+};
