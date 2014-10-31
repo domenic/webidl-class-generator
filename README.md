@@ -76,8 +76,6 @@ defineProperty(Foo.prototype, "A_CONSTANT", { value: 42, enumerable: true });
 window.Foo = Foo;
 ```
 
-(Although since `[Reflect]` is not part of standard WebIDL, ideally that would be done in a second pass, perhaps by a "plugin.")
-
 ## API
 
 This package's main module's default export is a function that takes as input a WebIDL string and the implementation module name, and returns a string of JavaScript. It will parse the WebIDL, making sure that it contains a single (non-partial) interface, and then build up the resulting JavaScript. Any unsupported WebIDL features—which is most of them, right now—will generally be ignored. An example:
@@ -91,6 +89,20 @@ var js = generate(idl, "./html-hr-element-impl.js");
 
 fs.writeFileSync("html-hr-element.js", js);
 ```
+
+## Nonstandard Extended Attributes
+
+A couple of non-standard extended attributes are allowed which are not part of the WebIDL specification.
+
+### `[Reflect]`
+
+The `[Reflect]` extended attribute is implemented to call `this.getAttribute` or `this.setAttribute` and process the input our output using [webidl-html-reflector](https://github.com/domenic/webidl-html-reflector), on both setting and getting. If `[Reflect]` is specified, the implementation class will not be consulted for the getter or setter logic.
+
+By default the attribute passed to `this.getAttribute` and `this.setAttribute` will be the same as the name of the property being reflected. You can use the form `[Reflect=custom]` or `[Reflect=custom_with_dashes]` to change that to be `"custom"` or `"custom-with-dashes"`, respectively.
+
+### `[NoConversion]`
+
+The `[NoConversion]` extended attribute will cause any type conversions to be omitted from a getter or setter. This is mostly useful when the implementation class already does the type conversion, e.g. if implementing [`URLUtils`](https://url.spec.whatwg.org/#urlutils) it is possible that the techniques using by the implementation class will already produce `USVString`s, and thus it would be undesirable to convert them all over again.
 
 ## Status
 
