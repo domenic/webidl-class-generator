@@ -4,9 +4,9 @@ require("traceur").require.makeDefault(function (filename) {
   return filename.indexOf("node_modules") === -1;
 });
 
-var generate = require("..").default;
+const generate = require("..").default;
 
-var input = "";
+let input = "";
 process.stdin.on("data", function (data) {
     input += data;
 });
