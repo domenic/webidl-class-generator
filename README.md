@@ -34,7 +34,6 @@ and produce something like
 import reflector from "webidl-html-reflector";
 import conversions from "webidl-conversions";
 import Impl from "./foo-impl";
-var defineProperty = Object.defineProperty;
 
 export default class Foo extends Bar {
     get x() {
@@ -70,8 +69,8 @@ export default class Foo extends Bar {
     }
 }
 
-defineProperty(Foo, "A_CONSTANT", { value: 42, enumerable: true });
-defineProperty(Foo.prototype, "A_CONSTANT", { value: 42, enumerable: true });
+Object.defineProperty(Foo, "A_CONSTANT", { value: 42, enumerable: true });
+Object.defineProperty(Foo.prototype, "A_CONSTANT", { value: 42, enumerable: true });
 
 window.Foo = Foo;
 ```
