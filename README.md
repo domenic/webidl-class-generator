@@ -104,6 +104,10 @@ By default the attribute passed to `this.getAttribute` and `this.setAttribute` w
 
 The `[NoConversion]` extended attribute will cause any type conversions to be omitted from a getter or setter. This is mostly useful when the implementation class already does the type conversion, e.g. if implementing [`URLUtils`](https://url.spec.whatwg.org/#urlutils) it is possible that the techniques using by the implementation class will already produce `USVString`s, and thus it would be undesirable to convert them all over again.
 
+### `[CustomElementCallbacks]`
+
+The `[CustomElementCallbacks]` extended attribute can be applied to an interface to denote that it should copy over any of the [custom element callbacks](https://w3c.github.io/webcomponents/spec/custom/#types-of-callbacks) from the implementation class to the generated class.
+
 ## Status
 
 We only support a subset of WebIDL features; they are being added on an as-needed basis for [HTML as Custom Elements](https://github.com/dglazkov/html-as-custom-elements). Check out [the test cases](https://github.com/domenic/webidl-class-generator/tree/master/test/cases) for a sampling of what's supported, and [the issues](https://github.com/domenic/webidl-class-generator/labels/idl%20feature) for upcoming ones that need work.
