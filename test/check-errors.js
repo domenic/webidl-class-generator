@@ -15,7 +15,7 @@ describe("Checking that correct errors are thrown", () => {
         const errrorContents = fs.readFileSync(errorFilePath, { encoding: "utf-8" }).trim();
 
         specify(idlFileName, () => {
-            assert.throws(() => generate(idlContents), er => er.message.contains(errrorContents));
+            assert.throws(() => generate(idlContents), er => er.message.includes(errrorContents));
         });
     });
 });

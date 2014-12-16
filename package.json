@@ -26,7 +26,7 @@
     "mocha-traceur": "^2.0.0"
   },
   "dependencies": {
-    "traceur": "0.0.72",
+    "traceur": "0.0.79",
     "webidl2": "^2.0.6"
   }
 }
