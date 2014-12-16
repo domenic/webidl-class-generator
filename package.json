@@ -28,5 +28,6 @@
   "dependencies": {
     "traceur": "0.0.79",
     "webidl2": "^2.0.6"
-  }
+  },
+  "traceur-runner": true
 }
