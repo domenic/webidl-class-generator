@@ -1,0 +1,4 @@
+interface StringifierOperation {
+  boolean foo();
+  stringifier DOMString foo();
+};

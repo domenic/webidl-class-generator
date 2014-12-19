@@ -1,0 +1,3 @@
+interface StringifierAttribute {
+  stringifier attribute USVString href;
+};
