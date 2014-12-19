@@ -23,7 +23,7 @@
   "devDependencies": {
     "glob": "^4.0.6",
     "mocha": "^1.21.4",
-    "mocha-traceur": "^2.0.0"
+    "mocha-traceur": "^2.1.0"
   },
   "dependencies": {
     "traceur": "0.0.79",
