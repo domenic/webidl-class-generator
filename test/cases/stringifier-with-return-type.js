@@ -7,4 +7,5 @@ export default class StringifierWithReturnType {
     return conversions["DOMString"](implResult);
   }
 }
+Object.defineProperty(StringifierWithReturnType.prototype, "toString", {enumerable: false});
 window.StringifierWithReturnType = StringifierWithReturnType;

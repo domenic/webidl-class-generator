@@ -7,4 +7,5 @@ export default class NoArgumentMethod {
     return conversions["boolean"](implResult);
   }
 }
+Object.defineProperty(NoArgumentMethod.prototype, "theMethod", {enumerable: false});
 window.NoArgumentMethod = NoArgumentMethod;

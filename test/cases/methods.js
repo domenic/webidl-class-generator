@@ -15,4 +15,6 @@ export default class Methods {
     return conversions["void"](implResult);
   }
 }
+Object.defineProperty(Methods.prototype, "theMethod", {enumerable: false});
+Object.defineProperty(Methods.prototype, "otherMethod", {enumerable: false});
 window.Methods = Methods;

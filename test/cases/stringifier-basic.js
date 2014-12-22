@@ -7,4 +7,5 @@ export default class StringifierBasic {
     return conversions["DOMString"](implResult);
   }
 }
+Object.defineProperty(StringifierBasic.prototype, "toString", {enumerable: false});
 window.StringifierBasic = StringifierBasic;

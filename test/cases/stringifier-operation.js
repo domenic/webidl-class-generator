@@ -10,4 +10,6 @@ export default class StringifierOperation {
     return conversions["DOMString"](this.foo());
   }
 }
+Object.defineProperty(StringifierOperation.prototype, "foo", {enumerable: false});
+Object.defineProperty(StringifierOperation.prototype, "toString", {enumerable: false});
 window.StringifierOperation = StringifierOperation;
