@@ -15,5 +15,4 @@ export default class StringifierAttribute {
     return this.href;
   }
 }
-Object.defineProperty(StringifierAttribute.prototype, "toString", {enumerable: false});
 window.StringifierAttribute = StringifierAttribute;
